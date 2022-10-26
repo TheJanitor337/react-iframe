@@ -1,0 +1,110 @@
+{
+  "name": "react-onload-iframe",
+  "version": "0.0.1",
+  "description": "iframe component for react that supports onLoad.",
+  "types": "dist/react-onload-iframe.d.ts",
+  "main": "dist/react-onload-iframe.cjs.js",
+  "module": "dist/react-onload-iframe.esm.js",
+  "browser": {
+    "./dist/react-onload-iframe.esm.js": "./dist/react-onload-iframe.browser.esm.js",
+    "./dist/react-onload-iframe.cjs.js": "./dist/react-onload-iframe.browser.cjs.js"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "postbuild": "yarn lint:size",
+    "test": "yarn test:web",
+    "test:web": "jest -c jest.config.main.js --forceExit",
+    "test:integration": "jest -c jest.config.integration.js --runInBand --forceExit",
+    "format": "eslint ./**/*.js --fix",
+    "lint": "eslint src",
+    "lint:size": "bundlewatch",
+    "prettier": "prettier src/** --write",
+    "prepublishOnly": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheJanitor337/react-onload-iframe.git"
+  },
+  "files": ["dist/**/*"],
+  "keywords": [
+    "react",
+    "iframe"
+  ],
+  "author": "T.J. Wood",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/TheJanitor337/react-onload-iframe/issues"
+  },
+  "homepage": "https://github.com/TheJanitor337/react-onload-iframe#readme",
+  "dependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/helper-module-imports": "^7.18.6",
+    "@babel/plugin-external-helpers": "^7.18.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/traverse": "^7.18.8"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-flow-strip-types": "^7.18.6",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/babel-plugin-macros": "^2.8.4",
+    "@types/enzyme": "^3.10.9",
+    "@types/jest": "^28.1.6",
+    "@types/js-beautify": "^1.13.1",
+    "@types/node": "^14.0.0",
+    "@types/react": "^17.0.22",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^28.1.3",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-tester": "^10.0.0",
+    "bundlewatch": "^0.3.1",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "jest-image-snapshot": "^4.2.0",
+    "jest-serializer-html": "^7.0.0",
+    "jest-watch-typeahead": "^2.0.0",
+    "js-beautify": "^1.13.0",
+    "prettier": "^2.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-frame-component": "^4.0.2",
+    "react-test-renderer": "^17.0.2",
+    "rollup": "^2.76.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.8.4"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">= 16.8.0"
+  },
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./dist/react-onload-iframe.min.js",
+        "maxSize": "800B"
+      }
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

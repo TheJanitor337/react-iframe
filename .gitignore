@@ -1,0 +1,12 @@
+package-lock.json
+coverage
+.idea/*
+node_modules
+dist
+.DS_Store
+.vscode
+*.log
+test-results.json
+.rollup.cache
+.build
+.next
